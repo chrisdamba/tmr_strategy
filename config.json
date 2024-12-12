@@ -1,0 +1,22 @@
+{
+  "ib_webapi": {
+    "base_url": "https://api.ibkr.com/v1/api",
+    "session_token": "your_session_token_here"
+  },
+  "account_id": "DU1234567",
+  "tickers": ["AAPL", "MSFT", "GOOGL"],
+  "check_interval": 60,
+  "max_positions": 10,
+  "allocation_per_trade": 1000,
+  "max_drawdown": 0.2,
+  "max_position_size": 0.1,
+  "screener_params": {
+    "channel_period": 252,
+    "channel_break_window": 10,
+    "atr_period": 5,
+    "atr_multiple": 1,
+    "min_volume": 100000,
+    "profit_threshold": 2.0,
+    "min_price": 5.0
+  }
+}

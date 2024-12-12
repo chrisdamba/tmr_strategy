@@ -1,0 +1,28 @@
+version: '3.8'
+services:
+  ibkr:
+    build: .
+    image: ibkr-rest-api:latest
+    container_name: ibkr
+    environment:
+      IBKR_ACCOUNT_ID: "U1234567"
+      TRADING_CHECK_INTERVAL: "60"
+      MAX_POSITIONS: "10"
+      ALLOCATION_PER_TRADE: "1000"
+      MAX_DRAWDOWN: "0.2"
+      MAX_POSITION_SIZE: "0.1"
+      TICKERS: "AAPL,MSFT,GOOGL,AMZN,META"
+      PROFIT_THRESHOLD: "2.0"
+      MIN_PRICE: "5.0"
+    ports:
+      - "5055:5055"  # Gateway
+      - "5056:5056"  # Web app
+    healthcheck:
+      test: ["CMD", "curl", "-k", "--fail", "https://localhost:5055/v1/api/tickle"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 20s
+    volumes:
+      - ./webapp:/app/webapp
+      - ./trading:/app/trading

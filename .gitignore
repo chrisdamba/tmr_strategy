@@ -1,0 +1,51 @@
+# Byte-compiled / compiled Python files
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pyc
+
+# Virtual environments
+venv/
+env/
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# Unit test / coverage reports
+.coverage
+*.cover
+coverage.xml
+htmlcov/
+
+# Logs and local runtime files
+logs/
+*.log
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Editor-specific / IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Docker-related
+*.pid
+# If you have local overrides not meant for repo
+docker-compose.override.yml
+
+# Node modules if the webapp or scripts use Node.js at some point
+node_modules/
+
+# SSL certs / sensitive files
+cacert.pem
+cacert.jks
+cacert.p12
+vertx.jks
+.env
